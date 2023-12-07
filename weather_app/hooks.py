@@ -219,3 +219,5 @@ app_license = "mit"
 # auth_hooks = [
 #	"weather_app.auth.validate"
 # ]
+
+website_route_rules = [{'from_route': '/weather/<path:app_path>', 'to_route': 'weather'},]
