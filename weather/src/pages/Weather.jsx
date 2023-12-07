@@ -36,8 +36,8 @@ const Weather = () => {
     <>
       {weatherData ? (
         <>
-          <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-3xl font-bold mb-4">Weather</h1>
+          <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-cyan-400 to-indigo-600">
+
             <div className="flex flex-row items-center">
               <select
                 className="border rounded shadow p-2"
@@ -51,20 +51,45 @@ const Weather = () => {
                     </option>
                   ))}
               </select>
-             
+
             </div>
-            <div className="flex flex-col items-center mt-4">
-              <h3 className="text-2xl font-bold">{weatherData.current.condition.text}</h3>
-              <img
-                src={weatherData.current.condition.icon}
-                alt={weatherData.current.condition.text}
-              />
-              <p className="text-lg">
-                Temperature: {weatherData.current.temp_c}°C
-              </p>
+
+            <div className='text-8xl font-light text-gray-200 my-8'>{selectedLocation || "Bangalore"}</div>
+
+            <div className="flex flex-row space-x-4 w-full justify-center items-center space-x-10">
+              <div>
+                <img
+                  src={weatherData.current.condition.icon}
+                  alt={weatherData.current.condition.text}
+                  height={"77px"}
+                  width={"75px"}
+                />
+              </div>
+              <div className='text-white font-light text-6xl'>
+                <div className='my-4'>
+                  <div className='text-center'>{weatherData.current.temp_c}°C</div>
+                  <div className='text-center text-4xl'>{weatherData.current.condition.text}</div>
+                </div>
+
+                <div className='my-4'>
+                  <div className='text-xl justify-between flex space-x-2'>
+                    <div>Humidity:</div>
+                    <div>{weatherData.current.humidity}%</div>
+                  </div>
+                  <div className='text-xl justify-between flex '>
+                    <div>Wind: </div>
+                    <div>{weatherData.current.wind_kph}KPH</div>
+                  </div>
+                </div>
+
+
+              </div>
             </div>
-            <div>Humidity: {weatherData.current.humidity}</div>
-            <div>Wind: {weatherData.current.wind_kph}</div>
+
+            <div>
+
+            </div>
+
           </div>
         </>
       ) : (
