@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cd weather && yarn dev",
-    "build": "cd weather && yarn build"
+    "build": "cd weather && yarn && yarn build"
   },
   "keywords": [],
   "author": "",
